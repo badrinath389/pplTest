@@ -1,6 +1,6 @@
 {
   "name": "ppl-services",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "ppl service project",
   "main": "index.ts",
   "scripts": {
