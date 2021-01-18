@@ -8,7 +8,7 @@
     "lint": "gulp lint",
     "compile": "gulp tscompile",
     "start": "node build/index.js",
-    "pm2": "pm2 stop all && npm i & npm run build & pm2 stop all& pm2 start build/index.js",
+    "pm2": "pm2 stop all && npm run build & pm2 stop all & pm2 start build/index.js",
     "node": "node build/index.js",
     "list": "pm2 list",
     "stop": "pm2 stop all",
