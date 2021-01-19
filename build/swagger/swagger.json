@@ -1,0 +1,2314 @@
+{
+	"components": {
+		"examples": {},
+		"headers": {},
+		"parameters": {},
+		"requestBodies": {},
+		"responses": {},
+		"schemas": {
+			"UserRole": {
+				"enum": [
+					"employee",
+					"admin",
+					"manager"
+				],
+				"type": "string"
+			},
+			"UserModel": {
+				"properties": {
+					"userId": {
+						"type": "string",
+						"nullable": true
+					},
+					"firstName": {
+						"type": "string"
+					},
+					"lastName": {
+						"type": "string",
+						"nullable": true
+					},
+					"dob": {
+						"type": "string",
+						"nullable": true
+					},
+					"email": {
+						"type": "string"
+					},
+					"mobile": {
+						"type": "number",
+						"format": "double"
+					},
+					"address": {
+						"type": "string",
+						"nullable": true
+					},
+					"city": {
+						"type": "string"
+					},
+					"state": {
+						"type": "string"
+					},
+					"pincode": {
+						"type": "number",
+						"format": "double"
+					},
+					"landmark": {
+						"type": "string",
+						"nullable": true
+					},
+					"username": {
+						"type": "string"
+					},
+					"password": {
+						"type": "string"
+					},
+					"description": {
+						"type": "string",
+						"nullable": true
+					},
+					"role": {
+						"$ref": "#/components/schemas/UserRole"
+					},
+					"active": {
+						"type": "boolean",
+						"nullable": true
+					},
+					"tempCode": {
+						"type": "string",
+						"nullable": true
+					},
+					"createdOn": {
+						"type": "string",
+						"format": "date-time",
+						"nullable": true
+					},
+					"updatedOn": {
+						"type": "string",
+						"format": "date-time",
+						"nullable": true
+					}
+				},
+				"required": [
+					"firstName",
+					"email",
+					"mobile",
+					"city",
+					"state",
+					"pincode",
+					"username",
+					"password",
+					"role"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"UserAuthModel": {
+				"properties": {
+					"username": {
+						"type": "string"
+					},
+					"password": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"username",
+					"password"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"UpdateUserModel": {
+				"properties": {
+					"firstName": {
+						"type": "string",
+						"nullable": true
+					},
+					"lastName": {
+						"type": "string",
+						"nullable": true
+					},
+					"dob": {
+						"type": "string",
+						"nullable": true
+					},
+					"email": {
+						"type": "string",
+						"nullable": true
+					},
+					"mobile": {
+						"type": "number",
+						"format": "double",
+						"nullable": true
+					},
+					"address": {
+						"type": "string",
+						"nullable": true
+					},
+					"city": {
+						"type": "string",
+						"nullable": true
+					},
+					"state": {
+						"type": "string",
+						"nullable": true
+					},
+					"pincode": {
+						"type": "number",
+						"format": "double",
+						"nullable": true
+					},
+					"landmark": {
+						"type": "string",
+						"nullable": true
+					},
+					"description": {
+						"type": "string",
+						"nullable": true
+					},
+					"role": {
+						"$ref": "#/components/schemas/UserRole",
+						"nullable": true
+					},
+					"updatedOn": {
+						"type": "string",
+						"format": "date-time",
+						"nullable": true
+					},
+					"active": {
+						"type": "boolean",
+						"nullable": true
+					},
+					"tempCode": {
+						"type": "string",
+						"nullable": true
+					}
+				},
+				"type": "object",
+				"additionalProperties": false
+			},
+			"UserActivateModel": {
+				"properties": {
+					"username": {
+						"type": "string"
+					},
+					"tempCode": {
+						"type": "string"
+					},
+					"updatedOn": {
+						"type": "string",
+						"format": "date-time",
+						"nullable": true
+					},
+					"active": {
+						"type": "boolean",
+						"nullable": true
+					}
+				},
+				"required": [
+					"username",
+					"tempCode"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"VehicleRegistrationModel": {
+				"properties": {
+					"vehicleId": {
+						"type": "string",
+						"nullable": true
+					},
+					"vehicleDisplayId": {
+						"type": "string",
+						"nullable": true
+					},
+					"vehicleNo": {
+						"type": "string"
+					},
+					"model": {
+						"type": "string"
+					},
+					"type": {
+						"type": "string"
+					},
+					"currentDriver": {
+						"type": "string"
+					},
+					"agentId": {
+						"type": "string",
+						"nullable": true
+					},
+					"owenerName": {
+						"type": "string",
+						"nullable": true
+					},
+					"ownerContact": {
+						"type": "string",
+						"nullable": true
+					},
+					"fuelType": {
+						"type": "string"
+					},
+					"insuranceDetails": {
+						"properties": {
+							"name": {
+								"type": "string"
+							},
+							"startDate": {
+								"type": "string"
+							},
+							"expiryDate": {
+								"type": "string"
+							},
+							"policyNo": {
+								"type": "string"
+							},
+							"chassisNo": {
+								"type": "string"
+							},
+							"engineNo": {
+								"type": "string"
+							}
+						},
+						"type": "object"
+					},
+					"registrationDetails": {
+						"items": {
+							"type": "string"
+						},
+						"type": "array",
+						"nullable": true
+					},
+					"incrementNo": {
+						"type": "number",
+						"format": "double",
+						"nullable": true
+					},
+					"createdOn": {
+						"type": "string",
+						"format": "date-time",
+						"nullable": true
+					},
+					"updatedOn": {
+						"type": "string",
+						"format": "date-time",
+						"nullable": true
+					},
+					"active": {
+						"type": "boolean",
+						"nullable": true
+					}
+				},
+				"required": [
+					"vehicleNo",
+					"model",
+					"type",
+					"currentDriver",
+					"fuelType",
+					"insuranceDetails"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"UpdateVehicleRegistrationModel": {
+				"properties": {
+					"vehicleNo": {
+						"type": "string",
+						"nullable": true
+					},
+					"model": {
+						"type": "string",
+						"nullable": true
+					},
+					"type": {
+						"type": "string",
+						"nullable": true
+					},
+					"currentDriver": {
+						"type": "string",
+						"nullable": true
+					},
+					"agentName": {
+						"type": "string",
+						"nullable": true
+					},
+					"agentId": {
+						"type": "string",
+						"nullable": true
+					},
+					"owenerName": {
+						"type": "string",
+						"nullable": true
+					},
+					"ownerContact": {
+						"type": "string",
+						"nullable": true
+					},
+					"fuelType": {
+						"type": "string",
+						"nullable": true
+					},
+					"insuranceDetails": {
+						"properties": {
+							"name": {
+								"type": "string"
+							},
+							"startDate": {
+								"type": "string"
+							},
+							"expiryDate": {
+								"type": "string"
+							},
+							"policyNo": {
+								"type": "string"
+							},
+							"chassisNo": {
+								"type": "string"
+							},
+							"engineNo": {
+								"type": "string"
+							}
+						},
+						"type": "object",
+						"nullable": true
+					},
+					"registrationDetails": {
+						"items": {
+							"type": "string"
+						},
+						"type": "array",
+						"nullable": true
+					},
+					"active": {
+						"type": "boolean",
+						"nullable": true
+					}
+				},
+				"type": "object",
+				"additionalProperties": false
+			},
+			"AgentRegistrationModel": {
+				"properties": {
+					"agentId": {
+						"type": "string",
+						"nullable": true
+					},
+					"agentName": {
+						"type": "string"
+					},
+					"registrationDate": {
+						"type": "string"
+					},
+					"vehicleRegId": {
+						"items": {
+							"type": "string"
+						},
+						"type": "array",
+						"nullable": true
+					},
+					"contact": {
+						"properties": {
+							"mobile1": {
+								"type": "string"
+							},
+							"mobile2": {
+								"type": "string"
+							},
+							"fax": {
+								"type": "string"
+							},
+							"phoneNo": {
+								"type": "string"
+							},
+							"email": {
+								"type": "string"
+							},
+							"branchAddress": {
+								"type": "string"
+							},
+							"homeAddress": {
+								"type": "string"
+							}
+						},
+						"required": [
+							"mobile1"
+						],
+						"type": "object",
+						"nullable": true
+					},
+					"bank": {
+						"properties": {
+							"accountNo": {
+								"type": "string"
+							},
+							"ifscCode": {
+								"type": "string"
+							},
+							"bankName": {
+								"type": "string"
+							},
+							"branch": {
+								"type": "string"
+							}
+						},
+						"type": "object",
+						"nullable": true
+					},
+					"createdOn": {
+						"type": "string",
+						"format": "date-time",
+						"nullable": true
+					},
+					"updatedOn": {
+						"type": "string",
+						"format": "date-time",
+						"nullable": true
+					},
+					"active": {
+						"type": "boolean",
+						"nullable": true
+					}
+				},
+				"required": [
+					"agentName",
+					"registrationDate"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"UpdateAgentRegistrationModel": {
+				"properties": {
+					"agentName": {
+						"type": "string",
+						"nullable": true
+					},
+					"registrationDate": {
+						"type": "string",
+						"nullable": true
+					},
+					"vehicleRegId": {
+						"items": {
+							"type": "string"
+						},
+						"type": "array",
+						"nullable": true
+					},
+					"active": {
+						"type": "boolean",
+						"nullable": true
+					},
+					"contact": {
+						"properties": {
+							"mobile1": {
+								"type": "string"
+							},
+							"mobile2": {
+								"type": "string"
+							},
+							"fax": {
+								"type": "string"
+							},
+							"phoneNo": {
+								"type": "string"
+							},
+							"email": {
+								"type": "string"
+							},
+							"branchAddress": {
+								"type": "string"
+							},
+							"homeAddress": {
+								"type": "string"
+							}
+						},
+						"type": "object",
+						"nullable": true
+					},
+					"bank": {
+						"properties": {
+							"accountNo": {
+								"type": "string"
+							},
+							"ifscCode": {
+								"type": "string"
+							},
+							"bankName": {
+								"type": "string"
+							},
+							"branch": {
+								"type": "string"
+							}
+						},
+						"type": "object",
+						"nullable": true
+					}
+				},
+				"type": "object",
+				"additionalProperties": false
+			},
+			"MasterOrderModel": {
+				"properties": {
+					"masterOrderId": {
+						"type": "string",
+						"nullable": true
+					},
+					"displayMasterId": {
+						"type": "string",
+						"nullable": true
+					},
+					"customerName": {
+						"type": "string",
+						"nullable": true
+					},
+					"incrementNo": {
+						"type": "number",
+						"format": "double",
+						"nullable": true
+					},
+					"userId": {
+						"type": "string",
+						"nullable": true
+					},
+					"quantity": {
+						"type": "number",
+						"format": "double",
+						"nullable": true
+					},
+					"rate": {
+						"type": "string",
+						"nullable": true
+					},
+					"location": {
+						"type": "string",
+						"nullable": true
+					},
+					"contact": {
+						"type": "string",
+						"nullable": true
+					},
+					"remark": {
+						"type": "string",
+						"nullable": true
+					},
+					"createdOn": {
+						"type": "string",
+						"format": "date-time",
+						"nullable": true
+					},
+					"updatedOn": {
+						"type": "string",
+						"format": "date-time",
+						"nullable": true
+					}
+				},
+				"type": "object",
+				"additionalProperties": false
+			},
+			"UpdateMasterOrderModel": {
+				"properties": {
+					"masterOrderId": {
+						"type": "string",
+						"nullable": true
+					},
+					"displayMasterId": {
+						"type": "string",
+						"nullable": true
+					},
+					"customerName": {
+						"type": "string",
+						"nullable": true
+					},
+					"incrementNo": {
+						"type": "number",
+						"format": "double",
+						"nullable": true
+					},
+					"userId": {
+						"type": "string",
+						"nullable": true
+					},
+					"quantity": {
+						"type": "number",
+						"format": "double",
+						"nullable": true
+					},
+					"rate": {
+						"type": "string",
+						"nullable": true
+					},
+					"location": {
+						"type": "string",
+						"nullable": true
+					},
+					"contact": {
+						"type": "string",
+						"nullable": true
+					},
+					"remark": {
+						"type": "string",
+						"nullable": true
+					}
+				},
+				"type": "object",
+				"additionalProperties": false
+			},
+			"OrderModel": {
+				"properties": {
+					"orderId": {
+						"type": "string",
+						"nullable": true
+					},
+					"displayOrderId": {
+						"type": "string",
+						"nullable": true
+					},
+					"date": {
+						"type": "string",
+						"nullable": true
+					},
+					"masterOrderId": {
+						"type": "string",
+						"nullable": true
+					},
+					"incrementNo": {
+						"type": "number",
+						"format": "double",
+						"nullable": true
+					},
+					"fromLocation": {
+						"type": "string",
+						"nullable": true
+					},
+					"toLocation": {
+						"type": "string",
+						"nullable": true
+					},
+					"vehicleId": {
+						"type": "string",
+						"nullable": true
+					},
+					"agentPartyName": {
+						"type": "string",
+						"nullable": true
+					},
+					"vehicleType": {
+						"type": "string",
+						"nullable": true
+					},
+					"actualWeight": {
+						"type": "number",
+						"format": "double",
+						"nullable": true
+					},
+					"totalChargableWeight": {
+						"type": "number",
+						"format": "double",
+						"nullable": true
+					},
+					"rate": {
+						"type": "number",
+						"format": "double",
+						"nullable": true
+					},
+					"freightAmount": {
+						"type": "number",
+						"format": "double",
+						"nullable": true
+					},
+					"deductions": {
+						"properties": {
+							"advanceTobank": {
+								"type": "number",
+								"format": "double"
+							},
+							"challan": {
+								"type": "number",
+								"format": "double"
+							},
+							"pumpCash": {
+								"type": "number",
+								"format": "double"
+							},
+							"dieselFuel": {
+								"type": "number",
+								"format": "double"
+							},
+							"tdsDeduction": {
+								"type": "number",
+								"format": "double"
+							},
+							"shortage": {
+								"type": "number",
+								"format": "double"
+							},
+							"totalDeductions": {
+								"type": "number",
+								"format": "double"
+							}
+						},
+						"type": "object"
+					},
+					"balanceToAgent": {
+						"type": "number",
+						"format": "double",
+						"nullable": true
+					},
+					"paymentStatus": {
+						"type": "string",
+						"nullable": true
+					},
+					"rateBA": {
+						"properties": {
+							"ratebalance": {
+								"type": "number",
+								"format": "double"
+							},
+							"billNo": {
+								"type": "string"
+							}
+						},
+						"type": "object"
+					},
+					"podReceivedDate": {
+						"type": "string",
+						"nullable": true
+					},
+					"podStatus": {
+						"type": "boolean",
+						"nullable": true
+					},
+					"podRemark": {
+						"type": "string",
+						"nullable": true
+					},
+					"createdOn": {
+						"type": "string",
+						"format": "date-time",
+						"nullable": true
+					},
+					"updatedOn": {
+						"type": "string",
+						"format": "date-time",
+						"nullable": true
+					}
+				},
+				"required": [
+					"deductions",
+					"rateBA"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"UpdateOrderModel": {
+				"properties": {
+					"displayOrderId": {
+						"type": "string",
+						"nullable": true
+					},
+					"date": {
+						"type": "string",
+						"nullable": true
+					},
+					"masterOrderId": {
+						"type": "string",
+						"nullable": true
+					},
+					"incrementNo": {
+						"type": "number",
+						"format": "double",
+						"nullable": true
+					},
+					"fromLocation": {
+						"type": "string",
+						"nullable": true
+					},
+					"toLocation": {
+						"type": "string",
+						"nullable": true
+					},
+					"vehicleId": {
+						"type": "string",
+						"nullable": true
+					},
+					"agentPartyName": {
+						"type": "string",
+						"nullable": true
+					},
+					"vehicleType": {
+						"type": "string",
+						"nullable": true
+					},
+					"actualWeight": {
+						"type": "number",
+						"format": "double",
+						"nullable": true
+					},
+					"totalChargableWeight": {
+						"type": "number",
+						"format": "double",
+						"nullable": true
+					},
+					"rate": {
+						"type": "number",
+						"format": "double",
+						"nullable": true
+					},
+					"freightAmount": {
+						"type": "number",
+						"format": "double",
+						"nullable": true
+					},
+					"deductions": {
+						"properties": {
+							"advanceTobank": {
+								"type": "number",
+								"format": "double"
+							},
+							"challan": {
+								"type": "number",
+								"format": "double"
+							},
+							"pumpCash": {
+								"type": "number",
+								"format": "double"
+							},
+							"dieselFuel": {
+								"type": "number",
+								"format": "double"
+							},
+							"tdsDeduction": {
+								"type": "number",
+								"format": "double"
+							},
+							"shortage": {
+								"type": "number",
+								"format": "double"
+							},
+							"totalDeductions": {
+								"type": "number",
+								"format": "double"
+							}
+						},
+						"type": "object"
+					},
+					"balanceToAgent": {
+						"type": "number",
+						"format": "double",
+						"nullable": true
+					},
+					"paymentStatus": {
+						"type": "string",
+						"nullable": true
+					},
+					"rateBA": {
+						"properties": {
+							"ratebalance": {
+								"type": "number",
+								"format": "double"
+							},
+							"billNo": {
+								"type": "string"
+							}
+						},
+						"type": "object"
+					},
+					"podReceivedDate": {
+						"type": "string",
+						"nullable": true
+					},
+					"podStatus": {
+						"type": "boolean",
+						"nullable": true
+					},
+					"podRemark": {
+						"type": "string",
+						"nullable": true
+					}
+				},
+				"required": [
+					"deductions",
+					"rateBA"
+				],
+				"type": "object",
+				"additionalProperties": false
+			}
+		},
+		"securitySchemes": {}
+	},
+	"info": {
+		"title": "Sample domain services",
+		"version": "0.0.1",
+		"description": "ppl service project"
+	},
+	"openapi": "3.0.0",
+	"paths": {
+		"/ping": {
+			"get": {
+				"operationId": "Ping",
+				"responses": {
+					"200": {
+						"content": {
+							"application/json": {
+								"schema": {
+									"properties": {
+										"message": {
+											"type": "string"
+										}
+									},
+									"required": [
+										"message"
+									],
+									"type": "object"
+								}
+							}
+						},
+						"description": "Ok"
+					}
+				},
+				"tags": [
+					"ping"
+				],
+				"security": [],
+				"parameters": []
+			}
+		},
+		"/user": {
+			"post": {
+				"operationId": "CreateUser",
+				"responses": {
+					"200": {
+						"content": {
+							"application/json": {
+								"schema": {
+									"properties": {
+										"message": {
+											"type": "string"
+										}
+									},
+									"required": [
+										"message"
+									],
+									"type": "object"
+								}
+							}
+						},
+						"description": "Ok"
+					}
+				},
+				"tags": [
+					"User"
+				],
+				"security": [],
+				"parameters": [],
+				"requestBody": {
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/UserModel"
+							}
+						}
+					}
+				}
+			},
+			"get": {
+				"operationId": "GetUserInfo",
+				"responses": {
+					"200": {
+						"content": {
+							"application/json": {
+								"schema": {
+									"additionalProperties": true,
+									"type": "object"
+								}
+							}
+						},
+						"description": "Ok"
+					}
+				},
+				"description": "Get all users information",
+				"tags": [
+					"User"
+				],
+				"security": [],
+				"parameters": [
+					{
+						"in": "header",
+						"name": "authorization",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			}
+		},
+		"/user/login": {
+			"post": {
+				"operationId": "AuthenticateUser",
+				"responses": {
+					"200": {
+						"content": {
+							"application/json": {
+								"schema": {
+									"properties": {
+										"token": {
+											"additionalProperties": true,
+											"type": "object"
+										}
+									},
+									"required": [
+										"token"
+									],
+									"type": "object"
+								}
+							}
+						},
+						"description": "Ok"
+					}
+				},
+				"tags": [
+					"User"
+				],
+				"security": [],
+				"parameters": [],
+				"requestBody": {
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/UserAuthModel"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/user/{id}": {
+			"get": {
+				"operationId": "GetUserById",
+				"responses": {
+					"200": {
+						"content": {
+							"application/json": {
+								"schema": {
+									"additionalProperties": true,
+									"type": "object"
+								}
+							}
+						},
+						"description": "Ok"
+					}
+				},
+				"tags": [
+					"User"
+				],
+				"security": [],
+				"parameters": [
+					{
+						"description": "Get user details by userId",
+						"in": "path",
+						"name": "id",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"in": "header",
+						"name": "authorization",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			},
+			"delete": {
+				"operationId": "DeleteUserById",
+				"responses": {
+					"200": {
+						"content": {
+							"application/json": {
+								"schema": {
+									"properties": {
+										"message": {
+											"type": "string"
+										}
+									},
+									"required": [
+										"message"
+									],
+									"type": "object"
+								}
+							}
+						},
+						"description": "Ok"
+					}
+				},
+				"tags": [
+					"User"
+				],
+				"security": [],
+				"parameters": [
+					{
+						"description": "UserId for the user to be deleted",
+						"in": "path",
+						"name": "id",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"in": "header",
+						"name": "authorization",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			},
+			"put": {
+				"operationId": "UpdateUserById",
+				"responses": {
+					"200": {
+						"content": {
+							"application/json": {
+								"schema": {
+									"properties": {
+										"message": {
+											"type": "string"
+										}
+									},
+									"required": [
+										"message"
+									],
+									"type": "object"
+								}
+							}
+						},
+						"description": "Ok"
+					}
+				},
+				"tags": [
+					"User"
+				],
+				"security": [],
+				"parameters": [
+					{
+						"description": "userId to update",
+						"in": "path",
+						"name": "id",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"description": "check authorization sending from Header",
+						"in": "header",
+						"name": "authorization",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				],
+				"requestBody": {
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/UpdateUserModel"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/user/account/activate": {
+			"post": {
+				"operationId": "ActivateUser",
+				"responses": {
+					"200": {
+						"content": {
+							"application/json": {
+								"schema": {
+									"properties": {
+										"message": {
+											"type": "string"
+										}
+									},
+									"required": [
+										"message"
+									],
+									"type": "object"
+								}
+							}
+						},
+						"description": "Ok"
+					}
+				},
+				"tags": [
+					"User"
+				],
+				"security": [],
+				"parameters": [],
+				"requestBody": {
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/UserActivateModel"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/vehicle": {
+			"post": {
+				"operationId": "CreateVehicleRegistation",
+				"responses": {
+					"200": {
+						"content": {
+							"application/json": {
+								"schema": {
+									"properties": {
+										"message": {
+											"type": "string"
+										}
+									},
+									"required": [
+										"message"
+									],
+									"type": "object"
+								}
+							}
+						},
+						"description": "Ok"
+					}
+				},
+				"tags": [
+					"Vehicle Registration"
+				],
+				"security": [],
+				"parameters": [
+					{
+						"in": "header",
+						"name": "authorization",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				],
+				"requestBody": {
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/VehicleRegistrationModel"
+							}
+						}
+					}
+				}
+			},
+			"get": {
+				"operationId": "GetVehicleRegistations",
+				"responses": {
+					"200": {
+						"content": {
+							"application/json": {
+								"schema": {
+									"additionalProperties": true,
+									"type": "object"
+								}
+							}
+						},
+						"description": "Ok"
+					}
+				},
+				"tags": [
+					"Vehicle Registration"
+				],
+				"security": [],
+				"parameters": [
+					{
+						"description": "check authorization sending from Header",
+						"in": "header",
+						"name": "authorization",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			}
+		},
+		"/vehicle/autoIncrement": {
+			"get": {
+				"operationId": "GetVehicleRegAutoIncrementNo",
+				"responses": {
+					"200": {
+						"content": {
+							"application/json": {
+								"schema": {
+									"properties": {
+										"autoIncrement": {
+											"type": "number",
+											"format": "double"
+										}
+									},
+									"required": [
+										"autoIncrement"
+									],
+									"type": "object"
+								}
+							}
+						},
+						"description": "Ok"
+					}
+				},
+				"tags": [
+					"Vehicle Registration"
+				],
+				"security": [],
+				"parameters": [
+					{
+						"description": "check authorization sending from Header",
+						"in": "header",
+						"name": "authorization",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			}
+		},
+		"/vehicle/{id}": {
+			"get": {
+				"operationId": "GetVehicleRegistrationById",
+				"responses": {
+					"200": {
+						"content": {
+							"application/json": {
+								"schema": {
+									"additionalProperties": true,
+									"type": "object"
+								}
+							}
+						},
+						"description": "Ok"
+					}
+				},
+				"tags": [
+					"Vehicle Registration"
+				],
+				"security": [],
+				"parameters": [
+					{
+						"description": "vehicle registration Id",
+						"in": "path",
+						"name": "id",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"description": "check authorization sending from Header",
+						"in": "header",
+						"name": "authorization",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			},
+			"put": {
+				"operationId": "UpdateVehicleRegistration",
+				"responses": {
+					"200": {
+						"content": {
+							"application/json": {
+								"schema": {
+									"properties": {
+										"message": {
+											"type": "string"
+										}
+									},
+									"required": [
+										"message"
+									],
+									"type": "object"
+								}
+							}
+						},
+						"description": "Ok"
+					}
+				},
+				"tags": [
+					"Vehicle Registration"
+				],
+				"security": [],
+				"parameters": [
+					{
+						"description": "vehicle registration Id",
+						"in": "path",
+						"name": "id",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"description": "check authorization sending from Header",
+						"in": "header",
+						"name": "authorization",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				],
+				"requestBody": {
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/UpdateVehicleRegistrationModel"
+							}
+						}
+					}
+				}
+			},
+			"delete": {
+				"operationId": "DeleteVehicleRegistration",
+				"responses": {
+					"200": {
+						"content": {
+							"application/json": {
+								"schema": {
+									"properties": {
+										"message": {
+											"type": "string"
+										}
+									},
+									"required": [
+										"message"
+									],
+									"type": "object"
+								}
+							}
+						},
+						"description": "Ok"
+					}
+				},
+				"tags": [
+					"Vehicle Registration"
+				],
+				"security": [],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "id",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"in": "header",
+						"name": "authorization",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			}
+		},
+		"/agent": {
+			"post": {
+				"operationId": "CreateAgentRegistation",
+				"responses": {
+					"200": {
+						"content": {
+							"application/json": {
+								"schema": {
+									"properties": {
+										"message": {
+											"type": "string"
+										}
+									},
+									"required": [
+										"message"
+									],
+									"type": "object"
+								}
+							}
+						},
+						"description": "Ok"
+					}
+				},
+				"tags": [
+					"Agent Registration"
+				],
+				"security": [],
+				"parameters": [],
+				"requestBody": {
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/AgentRegistrationModel"
+							}
+						}
+					}
+				}
+			},
+			"get": {
+				"operationId": "GetAgentRegistations",
+				"responses": {
+					"200": {
+						"content": {
+							"application/json": {
+								"schema": {
+									"additionalProperties": true,
+									"type": "object"
+								}
+							}
+						},
+						"description": "Ok"
+					}
+				},
+				"tags": [
+					"Agent Registration"
+				],
+				"security": [],
+				"parameters": [
+					{
+						"description": "check authorization sending from Header",
+						"in": "header",
+						"name": "authorization",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			}
+		},
+		"/agent/{id}": {
+			"get": {
+				"operationId": "GetAgentRegistrationById",
+				"responses": {
+					"200": {
+						"content": {
+							"application/json": {
+								"schema": {
+									"additionalProperties": true,
+									"type": "object"
+								}
+							}
+						},
+						"description": "Ok"
+					}
+				},
+				"tags": [
+					"Agent Registration"
+				],
+				"security": [],
+				"parameters": [
+					{
+						"description": "agent registration Id",
+						"in": "path",
+						"name": "id",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"description": "check authorization sending from Header",
+						"in": "header",
+						"name": "authorization",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			},
+			"put": {
+				"operationId": "UpdateAgentRegistration",
+				"responses": {
+					"200": {
+						"content": {
+							"application/json": {
+								"schema": {
+									"properties": {
+										"message": {
+											"type": "string"
+										}
+									},
+									"required": [
+										"message"
+									],
+									"type": "object"
+								}
+							}
+						},
+						"description": "Ok"
+					}
+				},
+				"tags": [
+					"Agent Registration"
+				],
+				"security": [],
+				"parameters": [
+					{
+						"description": "Agent registration Id",
+						"in": "path",
+						"name": "id",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"description": "check authorization sending from Header",
+						"in": "header",
+						"name": "authorization",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				],
+				"requestBody": {
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/UpdateAgentRegistrationModel"
+							}
+						}
+					}
+				}
+			},
+			"delete": {
+				"operationId": "DeleteAgentRegistration",
+				"responses": {
+					"200": {
+						"content": {
+							"application/json": {
+								"schema": {
+									"properties": {
+										"message": {
+											"type": "string"
+										}
+									},
+									"required": [
+										"message"
+									],
+									"type": "object"
+								}
+							}
+						},
+						"description": "Ok"
+					}
+				},
+				"tags": [
+					"Agent Registration"
+				],
+				"security": [],
+				"parameters": [
+					{
+						"description": "agent registration id",
+						"in": "path",
+						"name": "id",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"description": "check authorization sending from Header",
+						"in": "header",
+						"name": "authorization",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			}
+		},
+		"/masterorder": {
+			"post": {
+				"operationId": "CreateMasterOrder",
+				"responses": {
+					"200": {
+						"content": {
+							"application/json": {
+								"schema": {
+									"properties": {
+										"message": {
+											"type": "string"
+										}
+									},
+									"required": [
+										"message"
+									],
+									"type": "object"
+								}
+							}
+						},
+						"description": "Ok"
+					}
+				},
+				"tags": [
+					"Master Order"
+				],
+				"security": [],
+				"parameters": [
+					{
+						"in": "header",
+						"name": "authorization",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				],
+				"requestBody": {
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/MasterOrderModel"
+							}
+						}
+					}
+				}
+			},
+			"get": {
+				"operationId": "GetMasterOrderDetails",
+				"responses": {
+					"200": {
+						"content": {
+							"application/json": {
+								"schema": {
+									"additionalProperties": true,
+									"type": "object"
+								}
+							}
+						},
+						"description": "Ok"
+					}
+				},
+				"tags": [
+					"Master Order"
+				],
+				"security": [],
+				"parameters": [
+					{
+						"description": "check authorization sending from Header",
+						"in": "header",
+						"name": "authorization",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			}
+		},
+		"/masterorder/autoIncrement": {
+			"get": {
+				"operationId": "GetMasterOrderAutoIncrementNo",
+				"responses": {
+					"200": {
+						"content": {
+							"application/json": {
+								"schema": {
+									"properties": {
+										"autoIncrement": {
+											"type": "number",
+											"format": "double"
+										}
+									},
+									"required": [
+										"autoIncrement"
+									],
+									"type": "object"
+								}
+							}
+						},
+						"description": "Ok"
+					}
+				},
+				"tags": [
+					"Master Order"
+				],
+				"security": [],
+				"parameters": [
+					{
+						"description": "check authorization sending from Header",
+						"in": "header",
+						"name": "authorization",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			}
+		},
+		"/masterorder/{id}": {
+			"get": {
+				"operationId": "GetMasterOrderById",
+				"responses": {
+					"200": {
+						"content": {
+							"application/json": {
+								"schema": {
+									"additionalProperties": true,
+									"type": "object"
+								}
+							}
+						},
+						"description": "Ok"
+					}
+				},
+				"tags": [
+					"Master Order"
+				],
+				"security": [],
+				"parameters": [
+					{
+						"description": "MasterOrder Id",
+						"in": "path",
+						"name": "id",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"description": "check authorization sending from Header",
+						"in": "header",
+						"name": "authorization",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			},
+			"put": {
+				"operationId": "UpdateMasterOrderDetails",
+				"responses": {
+					"200": {
+						"content": {
+							"application/json": {
+								"schema": {
+									"properties": {
+										"message": {
+											"type": "string"
+										}
+									},
+									"required": [
+										"message"
+									],
+									"type": "object"
+								}
+							}
+						},
+						"description": "Ok"
+					}
+				},
+				"tags": [
+					"Master Order"
+				],
+				"security": [],
+				"parameters": [
+					{
+						"description": "master order Id",
+						"in": "path",
+						"name": "id",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"description": "check authorization sending from Header",
+						"in": "header",
+						"name": "authorization",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				],
+				"requestBody": {
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/UpdateMasterOrderModel"
+							}
+						}
+					}
+				}
+			},
+			"delete": {
+				"operationId": "DeleteMasterOrderDetails",
+				"responses": {
+					"200": {
+						"content": {
+							"application/json": {
+								"schema": {
+									"properties": {
+										"message": {
+											"type": "string"
+										}
+									},
+									"required": [
+										"message"
+									],
+									"type": "object"
+								}
+							}
+						},
+						"description": "Ok"
+					}
+				},
+				"tags": [
+					"Master Order"
+				],
+				"security": [],
+				"parameters": [
+					{
+						"description": "master order Id",
+						"in": "path",
+						"name": "id",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"description": "check authorization sending from Header",
+						"in": "header",
+						"name": "authorization",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			}
+		},
+		"/order": {
+			"post": {
+				"operationId": "CreateOrder",
+				"responses": {
+					"200": {
+						"content": {
+							"application/json": {
+								"schema": {
+									"properties": {
+										"message": {
+											"type": "string"
+										}
+									},
+									"required": [
+										"message"
+									],
+									"type": "object"
+								}
+							}
+						},
+						"description": "Ok"
+					}
+				},
+				"tags": [
+					"Order"
+				],
+				"security": [],
+				"parameters": [
+					{
+						"in": "header",
+						"name": "authorization",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				],
+				"requestBody": {
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/OrderModel"
+							}
+						}
+					}
+				}
+			},
+			"get": {
+				"operationId": "GetOrderDetails",
+				"responses": {
+					"200": {
+						"content": {
+							"application/json": {
+								"schema": {
+									"additionalProperties": true,
+									"type": "object"
+								}
+							}
+						},
+						"description": "Ok"
+					}
+				},
+				"tags": [
+					"Order"
+				],
+				"security": [],
+				"parameters": [
+					{
+						"description": "check authorization sending from Header",
+						"in": "header",
+						"name": "authorization",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			}
+		},
+		"/order/autoIncrement": {
+			"get": {
+				"operationId": "GetOrderAutoIncrementNo",
+				"responses": {
+					"200": {
+						"content": {
+							"application/json": {
+								"schema": {
+									"properties": {
+										"autoIncrement": {
+											"type": "number",
+											"format": "double"
+										}
+									},
+									"required": [
+										"autoIncrement"
+									],
+									"type": "object"
+								}
+							}
+						},
+						"description": "Ok"
+					}
+				},
+				"tags": [
+					"Order"
+				],
+				"security": [],
+				"parameters": [
+					{
+						"description": "check authorization sending from Header",
+						"in": "header",
+						"name": "authorization",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			}
+		},
+		"/order/{id}": {
+			"get": {
+				"operationId": "GetOrderById",
+				"responses": {
+					"200": {
+						"content": {
+							"application/json": {
+								"schema": {
+									"additionalProperties": true,
+									"type": "object"
+								}
+							}
+						},
+						"description": "Ok"
+					}
+				},
+				"tags": [
+					"Order"
+				],
+				"security": [],
+				"parameters": [
+					{
+						"description": "Order Id",
+						"in": "path",
+						"name": "id",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"description": "check authorization sending from Header",
+						"in": "header",
+						"name": "authorization",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			},
+			"put": {
+				"operationId": "UpdateOrderDetails",
+				"responses": {
+					"200": {
+						"content": {
+							"application/json": {
+								"schema": {
+									"properties": {
+										"message": {
+											"type": "string"
+										}
+									},
+									"required": [
+										"message"
+									],
+									"type": "object"
+								}
+							}
+						},
+						"description": "Ok"
+					}
+				},
+				"tags": [
+					"Order"
+				],
+				"security": [],
+				"parameters": [
+					{
+						"description": "order Id",
+						"in": "path",
+						"name": "id",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"description": "check authorization sending from Header",
+						"in": "header",
+						"name": "authorization",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				],
+				"requestBody": {
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/UpdateOrderModel"
+							}
+						}
+					}
+				}
+			},
+			"delete": {
+				"operationId": "DeleteorderDetails",
+				"responses": {
+					"200": {
+						"content": {
+							"application/json": {
+								"schema": {
+									"properties": {
+										"message": {
+											"type": "string"
+										}
+									},
+									"required": [
+										"message"
+									],
+									"type": "object"
+								}
+							}
+						},
+						"description": "Ok"
+					}
+				},
+				"tags": [
+					"Order"
+				],
+				"security": [],
+				"parameters": [
+					{
+						"description": "order Id",
+						"in": "path",
+						"name": "id",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"description": "check authorization sending from Header",
+						"in": "header",
+						"name": "authorization",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			}
+		},
+		"/dashboard": {
+			"get": {
+				"operationId": "GetDashboardCountInfo",
+				"responses": {
+					"200": {
+						"content": {
+							"application/json": {
+								"schema": {
+									"additionalProperties": true,
+									"type": "object"
+								}
+							}
+						},
+						"description": "Ok"
+					}
+				},
+				"tags": [
+					"Dashboard"
+				],
+				"security": [],
+				"parameters": [
+					{
+						"description": "check authorization sending from Header",
+						"in": "header",
+						"name": "authorization",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			}
+		}
+	},
+	"servers": [
+		{
+			"url": "https://localhost:3000/api"
+		}
+	]
+}
