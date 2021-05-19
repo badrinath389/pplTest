@@ -4,10 +4,6 @@ files:
  - source: /
    destination: /var/sample-ppl/
 hooks:
-  BeforeInstall:
-   - location: scripts/install_app_dependencies.sh
-     timeout: 300
-     runas: root
   ApplicationStart:
    - location: scripts/start_server.sh
      timeout: 300
