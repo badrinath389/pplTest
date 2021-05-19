@@ -1,16 +1,15 @@
 {
-  "swagger": {
-    "basePath": "/api",
-    "entryFile": "./src/routes/routes.ts",
-    "outputDirectory": "./build/swagger",
-    "specMerging": "recursive",
+    "entryFile": "src/index.ts",
     "noImplicitAdditionalProperties": "throw-on-extras",
-    "spec": {}
-  },
-  "routes": {
-    "basePath": "/api",
-    "entryFile": "./src/controllers/index.ts",
-    "routesDir": "./src/routes",
-    "middleware": "hapi"
-  }
+    "controllerPathGlobs": ["src/**/*.ts"],
+    "spec": {
+      "outputDirectory": "build",
+      "specVersion": 3,
+      "basePath": "/api"
+    },
+     "routes": {
+       "routesDir": "./src/routes",
+       "middleware": "express",
+       "basePath": "/api"
+    }
 }
