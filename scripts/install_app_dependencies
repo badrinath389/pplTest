@@ -1,0 +1,9 @@
+echo Installing curl ..
+yum -y install curl
+echo Installing git
+yum -y install git
+echo Updating node to v10.x
+curl -sL https://rpm.nodesource.com/setup_14.x | bash -
+yum -y install nodejs
+echo Checking node version...
+node -v
