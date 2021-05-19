@@ -1,6 +1,6 @@
 #!/bin/bash
 cd /var/sample-ppl
 
-npm i
+npm install
 npm run build
 npm start
