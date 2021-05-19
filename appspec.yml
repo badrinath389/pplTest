@@ -1,10 +1,17 @@
 version: 0.0
 os: linux
 files:
- - source: /
-   destination: /var/sample-ppl/
+  - source: /
+    destination: /var/sample-ppl
+permission:
+  - object: /var/sample-ppl
+    pattern: "**"
+    owner: ec2-user
+    model: 777
+    type:
+      - file
 hooks:
   ApplicationStart:
-   - location: scripts/start_server.sh
-     timeout: 300
-     runas: root
+    - location: scripts/start_server.sh
+      timeout: 300
+      runas: root
