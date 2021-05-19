@@ -1,7 +1,6 @@
 #!/bin/bash
-mkdir /home/ubuntu/nodejs
-cd /home/ubuntu/nodejs
+cd /var/sample-ppl
 
-sudo npm i
-sudo npm run build
-sudo npm start
+npm i
+npm run build
+npm start
