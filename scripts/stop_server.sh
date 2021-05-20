@@ -1,6 +1,3 @@
 #!/bin/bash
-cd /usr/sample-ppl
 
-rm -rf node_modules
-
-rm -rf build
+sudo npm run pm2stop
