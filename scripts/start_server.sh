@@ -1,6 +1,10 @@
 #!/bin/bash
 cd /var/sample-ppl
 
-sudo npm install
-sudo npm run build
-sudo npm start
+npm install
+
+npm run build
+
+npm run pm2stop
+
+npm run pm2start
