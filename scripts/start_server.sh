@@ -1,5 +1,5 @@
 #!/bin/bash
-cd /var/sample-ppl
+cd /usr/sample-ppl
 
 npm install
 
