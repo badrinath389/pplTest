@@ -1,5 +1,5 @@
 #!/bin/bash
-cd /var/sample-ppl
+cd /usr/sample-ppl
 
 rm -rf node_modules
 
