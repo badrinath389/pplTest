@@ -1,4 +1,5 @@
 #!/bin/bash
+cd /var/sampleApi
 
 sudo npm run pm2stop
 
