@@ -3,9 +3,9 @@ export class UsersService {
 
     public async getAllUsers() {
         return [{
-            firstName: 'badri',
-            lastName: 'nath',
-            email: 'nath@gmail.com',
+            firstName: 'test',
+            lastName: 'test',
+            email: 'test@gmail.com',
             mobile: 999988777,
             address: 'test'
         }, {

@@ -9,7 +9,8 @@
     "start": "node build/src/index.js",
     "pm2start": "pm2 start build/src/index.js",
     "pm2stop": "pm2 stop all",
-    "clean": "rm -rf build && rm -rf node_modules"
+    "clean": "rm -rf build && rm -rf node_modules",
+    "list": "pm2 list"
   },
   "author": "",
   "license": "ISC",
